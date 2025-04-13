@@ -17,15 +17,16 @@ then
 fi
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
-IMG="/img/"
-WAV="/wav/"
-FILES="waifu"
-AUDIOS="iiyada"
-QTTY1=`ls ${SCRIPT_DIR}${IMG} | wc -l`
-QTTY2=`ls ${SCRIPT_DIR}${WAV} | wc -l`
+WAIFU_DIR="${SCRIPT_DIR}/img/"
+IIYADA_DIR="${SCRIPT_DIR}/wav/"
+QTTY1=`ls ${WAIFU_DIR} | wc -l`
+QTTY2=`ls ${IIYADA_DIR} | wc -l`
+WAIFU_FILES=($(ls "${WAIFU_DIR}"))
+IIYADA_FILES=($(ls "${IIYADA_DIR}"))
 RANDOM=$$
 ITEM1=$(($RANDOM%$QTTY1))
 ITEM2=$(($RANDOM%$QTTY2))
-IMG="${SCRIPT_DIR}${IMG}${FILES}${ITEM1}"
-mplayer "${SCRIPT_DIR}${WAV}${AUDIOS}${ITEM2}.wav" </dev/null > /dev/null 2>&1 &
-neofetch --ascii $IMG | lolcat
+WAIFU="${WAIFU_DIR}${WAIFU_FILES[$ITEM1]}"
+IIYADA="${IIYADA_DIR}${IIYADA_FILES[$ITEM2]}"
+mplayer $IIYADA </dev/null > /dev/null 2>&1 &
+neofetch --ascii $WAIFU | lolcat
