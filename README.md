@@ -30,6 +30,8 @@
 
 I always felt that there wasn't enough UwU in neofetch, so inspired in this amazing [concept](https://www.reddit.com/r/ProgrammerAnimemes/comments/tifm61/yamete_kudasai/) I made a quick dumb script that did it but neater usage wise(not code wise LOL)
 
+Comes with 19 waifus and 6 moans out of the box. Feel free to add your own ASCII waifus or moans (supports most audio formats), as long as you make sure that the titles of the files don't contain a space!
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
